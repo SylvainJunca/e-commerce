@@ -11,43 +11,39 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+          Welcome to the Sticker Shop!
         </h1>
 
         <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
+         The best place to find cute stickers!
         </p>
 
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
+        <ul className={styles.grid}>
+          <li className={styles.card}>
+            <a>
+              <img src="/images/avocado.png/" alt="cute cartoon avocado with a face"/>
+              <h3>Avocado face</h3>
+              <p>Who doesn't like some avocado? On its own or in Guacamole. Yummy!</p>
+            </a>
+          </li>
+         
+          <li className={styles.card}>
+            <a>
+              <img src="/images/unicorn.jpg/" alt="cute cartoon unicorn eating a cupcake"/>
+              <h3>Unicorn with cupcake</h3>
+              <p>It's not a dog, it's not a pony, it's colourful and it's a unicorn!</p>
+            </a>
+          </li>
+          
+          <li className={styles.card}>
+            <a>
+              <img src="/images/racoon.jpeg/" alt="racoon realness, simple and cute"/>
+              <h3>Racoon realness</h3>
+              <p>Direct from Toronto, the most famous cute neighboor you can have.</p>
+            </a>
+          </li>    
 
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
+        </ul>
       </main>
 
       <footer className={styles.footer}>
