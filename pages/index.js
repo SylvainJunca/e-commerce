@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import products from "../products.json";
-import useCart from "../hooks/use-cart";
+import { useCart } from "../hooks/use-cart";
 
 
 export default function Home() {
@@ -17,20 +17,9 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>
-          Stickers Shop!
-        </h1>
-
         <p className={styles.description}>
          The best place to find cute stickers!
         </p>
-
-        <p className={styles.description}>
-         <strong> Items:</strong> {totalItems}
-         <strong> Total Cost:</strong> $ { subtotal }
-         <button className={styles.button} onClick={checkout}> Check Out</button>
-        </p>
-
         <ul className={styles.grid}>
 
           {products.map( product => {
