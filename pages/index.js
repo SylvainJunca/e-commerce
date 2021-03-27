@@ -1,6 +1,8 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
+import products from "../products.json"
 
+console.log({products})
 export default function Home() {
   return (
     <div className={styles.container}>
@@ -19,29 +21,21 @@ export default function Home() {
         </p>
 
         <ul className={styles.grid}>
-          <li className={styles.card}>
-            <a>
-              <img src="/images/avocado.png/" alt="cute cartoon avocado with a face"/>
-              <h3>Avocado face</h3>
-              <p>Who doesn't like some avocado? On its own or in Guacamole. Yummy!</p>
-            </a>
-          </li>
-         
-          <li className={styles.card}>
-            <a>
-              <img src="/images/unicorn.jpg/" alt="cute cartoon unicorn eating a cupcake"/>
-              <h3>Unicorn with cupcake</h3>
-              <p>It's not a dog, it's not a pony, it's colourful and it's a unicorn!</p>
-            </a>
-          </li>
-          
-          <li className={styles.card}>
-            <a>
-              <img src="/images/racoon.jpeg/" alt="racoon realness, simple and cute"/>
-              <h3>Racoon realness</h3>
-              <p>Direct from Toronto, the most famous cute neighboor you can have.</p>
-            </a>
-          </li>    
+
+          {products.map( product => {
+            const { id, title, price, image, alt, description } = product;
+            return (
+              <li key = {id} className={styles.card}>
+              <a>
+                <img src={image} alt={alt}/>
+                <h3>{title}</h3>
+                <p>${price}</p>
+                <p>{description}</p>
+              </a>
+            </li>
+            )
+           
+          })}    
 
         </ul>
       </main>

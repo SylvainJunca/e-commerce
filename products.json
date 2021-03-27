@@ -1,0 +1,29 @@
+[
+    {
+        "id" : "price_1IZgMBHE0mWCVzHvgMOvZiTS",
+        "title" : "Avocado face",
+        "alt"   : "cute cartoon avocado with a face",
+        "description" : "Who doesn't like some avocado? On its own or in Guacamole. Yummy!",
+        "image" : "/images/avocado.png/",
+        "price" : 10.00
+    
+    },
+    {
+        "id" : "price_1IZgMiHE0mWCVzHv6aJijMjR",
+        "title" : "Unicorn & cupcake",
+        "alt" : "cute cartoon unicorn eating a cupcake",
+        "description" : "It's not a dog, it's not a pony, it's colourful and it's a unicorn!",
+        "image" : "/images/unicorn.jpg/",
+        "price" : 10.00
+    
+    },
+    {
+        "id" : "price_1IZgN3HE0mWCVzHvYkHsnw3D",
+        "title" : "Racoon realness",
+        "alt" : "racoon realness, simple and cute",
+        "description" : "Direct from Toronto, the most famous cute neighboor you can have.",
+        "image" : "/images/racoon.jpeg/",
+        "price" : 8.00
+    
+    }
+]
