@@ -1,13 +1,14 @@
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import products from "../products.json";
+import useCart from "../hooks/use-cart";
 
-import { initiateCheckout } from "../lib/payments";
-
-
-console.log(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
 
 export default function Home() {
+
+  const {subtotal, totalItems, addToCart, checkout} = useCart();
+
+
   return (
     <div className={styles.container}>
       <Head>
@@ -17,11 +18,17 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Welcome to the Sticker Shop!
+          Stickers Shop!
         </h1>
 
         <p className={styles.description}>
          The best place to find cute stickers!
+        </p>
+
+        <p className={styles.description}>
+         <strong> Items:</strong> {totalItems}
+         <strong> Total Cost:</strong> $ { subtotal }
+         <button className={styles.button} onClick={checkout}> Check Out</button>
         </p>
 
         <ul className={styles.grid}>
@@ -38,13 +45,8 @@ export default function Home() {
               </a>
               <p>
                 <button className={styles.button} onClick={ () => {
-                  initiateCheckout({
-                    lineItems : [
-                      {price : id,
-                      quantity : 1}
-                    ]
-                  });
-                }}>Buy Now</button>
+                  addToCart({id});
+                }}>Add to cart</button>
                 </p>
             </li>
             )
