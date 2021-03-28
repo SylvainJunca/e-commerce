@@ -76,6 +76,7 @@ export function useCartState() {
       };
 
     return {
+        cartItems,
         subtotal, 
         totalItems, 
         addToCart, 

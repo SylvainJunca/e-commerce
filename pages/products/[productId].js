@@ -63,6 +63,7 @@ export default function Product({product}) {
   )
 }
 
+//gets the params / productId and returns the matching props to use for each product page
 export async function getStaticProps( {params}) {
   const product = products.find(({id}) => id === params.productId)
   return {
@@ -72,6 +73,7 @@ export async function getStaticProps( {params}) {
   }
 }
 
+//gets the ids from each product to generate paths for the dynamic pages and set the params
 export async function getStaticPaths() {
   const paths = products.map((product) => {
     return {

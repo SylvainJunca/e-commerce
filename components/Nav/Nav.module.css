@@ -7,6 +7,7 @@
   
   .navTitle {
     font-size: 1.5em;
+    cursor: pointer;
     font-weight: bold;
     margin: 0;
   }
@@ -21,6 +22,7 @@
   
   .navCart button {
     display: flex;
+    cursor: pointer;
     align-items: center;
     font-size: 1.2em;
     background: none;
