@@ -174,3 +174,25 @@
     box-shadow: none;
     padding: 0;
   }
+
+  .updateButton {
+    color: white;
+    font-family: inherit;
+    font-size: .6em;
+    font-weight: 700;
+    background-color: rgb(92, 31, 150);
+    padding: .8em 1.4em;
+    border-radius: .2em;
+    border: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
+    cursor: pointer;
+  }
+
+  .inputQuantity {
+    font-family: inherit;
+    font-size: .6em;
+    padding: .8em 1.4em;
+    border-radius: .2em;
+    border: 0;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .4);
+  }

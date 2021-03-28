@@ -29,16 +29,39 @@ const columns = [
 
 export default function Home() {
 
-  const { cartItems, checkout } = useCart();
+  const { cartItems, updateItem, checkout } = useCart();
   
   const data = cartItems.map((item) => {
 
-  const product = products.find(({id}) => id === item.id);
+    const product = products.find(({id}) => id === item.id);
+
+    const Quantity = () => {
+
+      function handleOnSubmit(e){
+        e.preventDefault();
+
+        const { currentTarget } = e;
+        const inputs = Array.from(currentTarget.elements);
+        const quantity = inputs.find(input => input.name === "quantity")?.value;
+        updateItem({
+          id : item.id,
+          quantity : !!quantity && parseInt(quantity)
+        });
+      }
+
+      return (
+        <form onSubmit={handleOnSubmit}>
+          <input className={styles.inputQuantity} type="number" name="quantity" min={0} defaultValue={item.quantity}/>
+          <button className={styles.updateButton}>Update</button>
+
+        </form>
+      )
+    }
       return {
-      title : product.title,  
-      quantity : item.quantity,
-      pricePerItem : item.pricePerItem,
-      total : item.quantity * item.pricePerItem
+        ...item,
+        quantity : <Quantity />,
+        title : product.title,  
+        total : item.quantity * item.pricePerItem
       }
   });
   
@@ -66,14 +89,7 @@ export default function Home() {
       </main>
 
       <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
+        React app, Context API, custom React Hook for the cart, Next.js with Dynamic Routes, Stripe Checkout, hosted on Vercel.
       </footer>
     </div>
   )
