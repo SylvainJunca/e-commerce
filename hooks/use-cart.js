@@ -1,5 +1,5 @@
 
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import products from "../products.json";
 
 import { initiateCheckout } from "../lib/payments";
@@ -13,6 +13,21 @@ export const CartContext = createContext({});
 export function useCartState() {
 
     const [cart, updateCart] = useState(defaultCart);
+    
+    //when we load the page, check if there is any cart on the localStorage and use it 
+    useEffect(() => {
+        const localData = window.localStorage.getItem("stickers_cart");
+        const data = !!localData && JSON.parse(localData);
+        if(!!data) {
+            updateCart(data);
+        }
+    },[]);
+    
+    //when the cart changes, update localStorage
+    useEffect(() => {
+        const data = JSON.stringify(cart);
+        window.localStorage.setItem("stickers_cart", data);
+    }, [cart])
 
 
     const cartItems = Object.keys(cart.products).map( key => {
