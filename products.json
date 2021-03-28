@@ -4,7 +4,7 @@
         "title" : "Avocado face",
         "alt"   : "cute cartoon avocado with a face",
         "description" : "Who doesn't like some avocado? On its own or in Guacamole. Yummy!",
-        "image" : "/images/avocado.png/",
+        "image" : "/images/avocado.jpg/",
         "price" : 10.00
     
     },
@@ -22,7 +22,7 @@
         "title" : "Racoon realness",
         "alt" : "racoon realness, simple and cute",
         "description" : "Direct from Toronto, the most famous cute neighboor you can have.",
-        "image" : "/images/racoon.jpeg/",
+        "image" : "/images/racoon.jpg/",
         "price" : 8.00
     
     }
