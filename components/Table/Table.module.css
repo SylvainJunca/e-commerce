@@ -12,10 +12,10 @@
     border-bottom: 0;
   }
   
-  .table td {
+  /* .table td {
     padding: 1em;
     border-bottom: solid 1px #cfd7de;
-  }
+  } */
   
   .table td:not(:first-child) {
     text-align: center;

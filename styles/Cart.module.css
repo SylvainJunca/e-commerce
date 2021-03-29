@@ -189,6 +189,7 @@
   }
 
   .inputQuantity {
+    max-width: 40%;
     font-family: inherit;
     font-size: .6em;
     padding: .8em 1.4em;
